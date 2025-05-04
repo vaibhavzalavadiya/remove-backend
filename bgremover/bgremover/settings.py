@@ -34,7 +34,9 @@ SECRET_KEY = 'django-insecure-kex#c+4q@y67hwuxq=n62hdmen!f^#d-970#+cw-+w2&q$npl^
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+# bgremover/bgremover/settings.py
+
+ALLOWED_HOSTS = ['127.0.0.1', 'localhost', '*']  # Add your laptop's local IP address here if known and needed
 
 
 # Application definition
@@ -62,7 +64,13 @@ MIDDLEWARE = [
     'corsheaders.middleware.CorsMiddleware',
     
 ]
-CORS_ALLOW_ALL_ORIGINS = True
+# CORS_ALLOW_ALL_ORIGINS = True
+
+CORS_ALLOWED_ORIGINS = [
+    "http://localhost:5173",  # For local frontend development
+    # "https://apexremovecom.vercel.app/",  # Your Vercel frontend URL
+    # Add other allowed origins as needed
+]
 
 ROOT_URLCONF = 'bgremover.urls'
 
